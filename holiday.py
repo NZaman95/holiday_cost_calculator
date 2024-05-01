@@ -40,11 +40,19 @@ def holiday_cost (num_nights, city_flight, rental_days):
 # print numberered list of destinations ofr user selection
 print("Destination List:\n1 - London\n2 - Paris\n3 - Berlin\n4 - Madrid\n")
 
-# get user input for city_flight, num_nights and rental_days
-city_flight = int(input("Please select one of the available cities by entering the corresponding number: "))
-num_nights = int(input("Please enter the desired number of nights for your hotel stay: "))
-rental_days = int(input("Please enter how many days you will need a hire car: "))
+# Set list for valid choices with while loop
+valid_choices = [1,2,3,4]
+while True:
 
-#print the statement for cost of holiday, with holiday_cost given
-print("The cost of a holiday for", num_nights, "nights in city", city_flight, "when the car is hired for", rental_days, end = "")
-print(" days is £", holiday_cost (num_nights, city_flight, rental_days))
+    # get user input for city_flight
+    city_flight = int(input("Please select one of the available cities by entering the corresponding number: "))
+
+    # if user input is valid, get user input for num_nights and rental_days
+    if city_flight in valid_choices:
+        num_nights = int(input("Please enter the desired number of nights for your hotel stay: "))
+        rental_days = int(input("Please enter how many days you will need a hire car: "))
+
+        #print the statement for cost of holiday, with holiday_cost given
+        print("The cost of a holiday for", num_nights, "nights in city", city_flight, "when the car is hired for", rental_days, end = "")
+        print(" days is £", holiday_cost (num_nights, city_flight, rental_days))
+        break
