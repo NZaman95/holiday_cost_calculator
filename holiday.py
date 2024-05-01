@@ -56,3 +56,7 @@ while True:
         print("The cost of a holiday for", num_nights, "nights in city", city_flight, "when the car is hired for", rental_days, end = "")
         print(" days is £", holiday_cost (num_nights, city_flight, rental_days))
         break
+
+    # if user iput is invlaid, print "Invalid Choice"
+    else:
+        print("Invalid Choice")
